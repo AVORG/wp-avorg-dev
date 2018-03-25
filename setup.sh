@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git clone https://github.com/AVORG/wp-avorg
+
 docker exec wpavorg_wordpress_1 wp core install \
 	--url=localhost:8000 \
 	--title=AudioVerse \

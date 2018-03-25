@@ -18,6 +18,8 @@ services:
     image: conetix/wordpress-with-wp-cli:latest
     ports:
       - "8000:80"
+    volumes:
+      - "./wp-avorg:/var/www/html/wp-content/plugins/wp-avorg"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

@@ -2,9 +2,11 @@
 
 git clone https://github.com/AVORG/wp-avorg
 
-docker exec wpavorg_wordpress_1 wp core install \
+docker exec wpavorgdev_wordpress_1 wp core install \
 	--url=localhost:8000 \
 	--title=AudioVerse \
 	--admin_user=wordpress \
 	--admin_password=wordpress \
 	--admin_email=admin@example.com
+
+docker exec wpavorgdev_wordpress_1 wp plugin activate wp-avorg

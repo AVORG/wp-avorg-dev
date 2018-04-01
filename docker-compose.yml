@@ -19,7 +19,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - "./wp-avorg:/var/www/html/wp-content/plugins/wp-avorg"
+      - "./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

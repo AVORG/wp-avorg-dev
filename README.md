@@ -18,6 +18,10 @@ docker-compose up
 open http://localhost:8000
 ```
 
+[Home](http://localhost:8000)
+
+[Admin login](http://localhost:8000/wp-login.php)
+
 ## Commands
 
 ### Host Commands

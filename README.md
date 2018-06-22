@@ -26,8 +26,8 @@ open http://localhost:8000
 
 ### Host Commands
 
-Command                                                                      | Description
------------------------------------------------------------------------------|------------------------------------
+Command                                                                           | Description
+----------------------------------------------------------------------------------|------------------------------------
 `docker exec wp-avorg-dev_wordpress_1 /bin/bash -c 'cd /usr/src/wordpress && ls'` | Run command from outside container
 `docker exec -it wp-avorg-dev_wordpress_1 bash`                                   | Jump into machine
 

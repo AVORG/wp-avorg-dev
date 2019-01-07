@@ -22,6 +22,17 @@ open http://localhost:8000
 
 [Admin login](http://localhost:8000/wp-login.php)
 
+## Compiling Stylesheet
+
+```bash
+npm install -g sass
+sass wp-avorg-plugin/style/style.scss wp-avorg-plugin/style/style.css
+```
+
+If you use an IDE like PhpStorm you can set up a file watcher to do this automatically.
+
+[More information](http://sass-lang.com/install)
+
 ## Commands
 
 ### Host Commands
@@ -43,3 +54,8 @@ Command              | Description
 Command          | Description
 -----------------|----------------
 `wp plugin list` | List plugins
+
+## SSL
+
+Certificate generated using [SelfSignedCertificate.com](http://www.selfsignedcertificate.com/) and renamed according to 
+[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) readme file.

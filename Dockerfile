@@ -4,3 +4,5 @@ FROM conetix/wordpress-with-wp-cli:latest
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
 	&& rm -rf /tmp/pear/
+
+COPY ./transfer/php.ini $PHP_INI_DIR/php.ini

@@ -1,1 +1,3 @@
-wp-avorg-plugin/**/*
+/wp-avorg-plugin/**/*
+/pwa/**/*
+/logs/*.log

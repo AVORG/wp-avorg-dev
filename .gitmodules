@@ -1,0 +1,9 @@
+[submodule "natlib"]
+	path = natlib
+	url = https://github.com/narthur/natlib
+[submodule "pwa"]
+	path = pwa
+	url = https://github.com/xwp/pwa-wp.git
+[submodule "wp-avorg-plugin"]
+	path = wp-avorg-plugin
+	url = https://github.com/AVORG/wp-avorg-plugin.git

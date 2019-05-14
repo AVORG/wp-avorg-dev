@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/AVORG/wp-avorg-plugin.git
-git clone https://github.com/narthur/pwa-wp.git pwa
-
 ( cd pwa && npm install )
 
 docker exec wp-avorg-dev_wordpress_1 wp core install \

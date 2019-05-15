@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-( cd pwa && npm install )
+# Build PWA plugin from source
+( cd pwa && composer install && npm install && npm run build )
 
+# Configure WordPress
 docker exec wp-avorg-dev_wordpress_1 wp core install \
 	--url=localhost:8000 \
 	--title=AudioVerse \
@@ -9,6 +11,7 @@ docker exec wp-avorg-dev_wordpress_1 wp core install \
 	--admin_password=wordpress \
 	--admin_email=admin@example.com
 
+# Activate WordPress plugins
 docker exec wp-avorg-dev_wordpress_1 wp plugin activate wp-avorg-plugin pwa
 
 # In the future, set this based on a "dev" flag passed to setup.sh

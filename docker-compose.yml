@@ -21,6 +21,7 @@ services:
       - "./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin"
       - "./pwa:/var/www/html/wp-content/plugins/pwa"
       - "./logs:/logs"
+      - "./natlib:/var/www/html/wp-content/plugins/wp-avorg-plugin/vendor/narthur/natlib"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

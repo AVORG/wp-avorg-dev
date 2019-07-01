@@ -11,6 +11,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
+      XDEBUG_CONFIG: idekey=PHPSTORM
   wordpress:
     depends_on:
       - db
@@ -18,10 +19,11 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - "./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin"
-      - "./pwa:/var/www/html/wp-content/plugins/pwa"
-      - "./logs:/logs"
-      - "./natlib:/var/www/html/wp-content/plugins/wp-avorg-plugin/vendor/narthur/natlib"
+      - ./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin
+      - ./pwa:/var/www/html/wp-content/plugins/pwa
+      - ./transfer:/var/www/html/transfer
+      - ./logs:/logs
+      - ./transfer/php.ini:/usr/local/etc/php/php.ini
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

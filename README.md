@@ -59,3 +59,32 @@ Command          | Description
 
 Certificate generated using [SelfSignedCertificate.com](http://www.selfsignedcertificate.com/) and renamed according to 
 [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) readme file.
+
+## Configuring Xdebug
+
+When using Xdebug with PhpStorm, you'll need to disable the following options in preferences:
+
+- Force break at first line when no path mapping specified
+- Force break at first line when a script is outside the project
+
+Follow these instructions to configure PhpStorm to use the container's copy of PHP for the CLI interpreter:
+
+- [Configuring Remote PHP Interpreters](https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html)
+- [Docker](https://www.jetbrains.com/help/phpstorm/docker.html)
+
+[Validate your installation of Xdebug](https://www.jetbrains.com/help/phpstorm/configuring-xdebug.html#web-server-debugging). 
+You should see something like this:
+
+![Xdebug validation](img/validate_xdebug.png)
+
+In `Preferences > Languages & Frameworks > PHP > Servers`, turn on the following setting:
+
+> Use path mappings (select if the server is remote or symlinks are used)
+
+Then set the server path for `wp-avorg-dev/wp-avorg-plugin` to the following path:
+
+> /var/www/html/wp-content/plugins/wp-avorg-plugin
+
+Install the [Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
+Chrome extension, enable debug mode, and tell PhpStorm to start listening for connections. Then you're ready to start
+adding breakpoints and debugging your code.

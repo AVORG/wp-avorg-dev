@@ -35,30 +35,27 @@ If you use an IDE like PhpStorm you can set up a file watcher to do this automat
 
 ## Commands
 
-### Host Commands
+### Host
 
 Command                                                                           | Description
-----------------------------------------------------------------------------------|------------------------------------
+----------------------------------------------------------------------------------|--------------------------------------
+`docker-compose build --pull --no-cache`                                          | Force image updates; update WordPress
 `docker exec wp-avorg-dev_wordpress_1 /bin/bash -c 'cd /usr/src/wordpress && ls'` | Run command from outside container
 `docker exec -it wp-avorg-dev_wordpress_1 bash`                                   | Jump into machine
 
-### Any Docker Machine Commands
+### CLI
+
+Command               | Description
+----------------------|--------------------------------------
+`./wp.sh`             | Jump into WordPress container
+`./wp.sh plugin list` | List installed plugins
+
+### Container
 
 Command              | Description
 ---------------------|-------------------------------------
 `prentenv`           | See all env vars, including Docker's
 `ctrl+p+q` or `exit` | Jump out of machine
-
-### WordPress Docker Machine Commands
-
-Command          | Description
------------------|----------------
-`wp plugin list` | List plugins
-
-## SSL
-
-Certificate generated using [SelfSignedCertificate.com](http://www.selfsignedcertificate.com/) and renamed according to 
-[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) readme file.
 
 ## Configuring Xdebug
 

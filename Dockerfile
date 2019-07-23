@@ -1,4 +1,4 @@
-FROM conetix/wordpress-with-wp-cli:latest
+FROM wordpress:latest
 
 # Install Xdebug
 RUN pecl install xdebug \

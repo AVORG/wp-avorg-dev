@@ -54,8 +54,8 @@ Command               | Description
 
 Command              | Description
 ---------------------|-------------------------------------
-`prentenv`           | See all env vars, including Docker's
 `ctrl+p+q` or `exit` | Jump out of machine
+`prentenv`           | See all env vars, including Docker's
 
 ## Configuring Xdebug
 

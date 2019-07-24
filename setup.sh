@@ -12,3 +12,6 @@
 
 ./wp.sh plugin activate wp-avorg-plugin pwa
 ./wp.sh config set WP_DEBUG true --raw
+./wp.sh config set FS_METHOD direct
+
+docker exec wp-avorg-dev_wordpress_1 /bin/bash -c "chown -R www-data:www-data /var/www/html/wp-content"

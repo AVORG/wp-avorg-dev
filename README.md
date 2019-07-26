@@ -22,7 +22,9 @@ open http://localhost:8000
 
 [Admin login](http://localhost:8000/wp-login.php)
 
-## Compiling Stylesheet
+## Transpiling
+
+### Sass
 
 ```bash
 npm install -g sass
@@ -32,6 +34,17 @@ sass wp-avorg-plugin/style/style.scss wp-avorg-plugin/style/style.css
 If you use an IDE like PhpStorm you can set up a file watcher to do this automatically.
 
 [More information](http://sass-lang.com/install)
+
+### TypeScript
+
+```bash
+npm install -g typescript
+cd wp-avorg-pluing
+tsc
+```
+
+[PhpStorm has TypeScript support built in](https://www.jetbrains.com/help/phpstorm/typescript-support.html) 
+which can be set up to recompile automatically.
 
 ## Commands
 

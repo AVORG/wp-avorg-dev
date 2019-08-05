@@ -19,6 +19,7 @@ services:
     ports:
       - "8000:80"
     volumes:
+      - ./wp:/var/www/html
       - ./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin
       - ./pwa:/var/www/html/wp-content/plugins/pwa
       - ./transfer:/var/www/html/transfer

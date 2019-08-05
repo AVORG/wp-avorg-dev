@@ -1,3 +1,5 @@
 /wp-avorg-plugin/**/*
 /pwa/**/*
 /logs/*.log
+/wp
+!/wp/empty

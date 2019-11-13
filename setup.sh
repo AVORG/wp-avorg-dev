@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
 
+set -x
+
 # Build PWA plugin from source
-( cd pwa && composer install && npm install && npm run build )
+docker run -it --rm --volume "$PWD/pwa":/app composer install
+docker-compose run --rm \
+  -v "$PWD":/temp \
+  -w /temp/pwa \
+  wordpress /bin/bash -c 'source ~/.profile && npm install && npm run build'
+
+# Install wp-avorg-plugin dependencies
+docker run -it --rm --volume "$PWD/wp-avorg-plugin":/app composer install
+docker-compose run --rm \
+  -v "$PWD":/temp \
+  -w /temp/wp-avorg-plugin \
+  wordpress /bin/bash -c 'source ~/.profile && npm install && npm run build'
 
 ./wp.sh core install \
 	--url=localhost:8000 \
@@ -11,8 +24,10 @@
 	--admin_email=admin@example.com
 
 ./wp.sh plugin activate wp-avorg-plugin pwa
+./wp.sh plugin install query-monitor --activate
 ./wp.sh config set WP_DEBUG true --raw
 ./wp.sh config set SCRIPT_DEBUG true --raw
 ./wp.sh config set FS_METHOD direct
+./wp.sh rewrite structure '/%postname%/'
 
 docker exec wp-avorg-dev_wordpress_1 /bin/bash -c "chown -R www-data:www-data /var/www/html/wp-content"

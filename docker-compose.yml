@@ -19,17 +19,33 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./wp:/var/www/html
       - ./wp-avorg-plugin:/var/www/html/wp-content/plugins/wp-avorg-plugin
       - ./pwa:/var/www/html/wp-content/plugins/pwa
       - ./transfer:/var/www/html/transfer
       - ./logs:/logs
       - ./transfer/php.ini:/usr/local/etc/php/php.ini
       - ./transfer/error-logging.ini:/usr/local/etc/php/conf.d/error-logging.ini
+#      - ./wp:/var/www/html # Causes plugin mounts to disappear at random
+      - "xdebug:/temp/profiledir"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
+  webpack:
+    image: node:latest
+    working_dir: /home/node/app
+    volumes:
+      - ./wp-avorg-plugin:/home/node/app
+    command: npm run build
+  webgrind:
+    image: devgeniem/webgrind
+    ports:
+      - "8001:80"
+    volumes:
+      - "xdebug:/tmp/xdebug"
+    environment:
+      XDEBUG_OUTPUT_DIR: /tmp/xdebug
 volumes:
   dbdata:
+  xdebug:

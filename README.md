@@ -18,9 +18,11 @@ docker-compose up
 open http://localhost:8000
 ```
 
-[Home](http://localhost:8000)
-
-[Admin login](http://localhost:8000/wp-login.php)
+URL                                | Description
+-----------------------------------|---------------
+http://localhost:8000              | Home
+http://localhost:8000/wp-login.php | Admin Login
+http://localhost:8001              | Webgrind
 
 ## Transpiling
 
@@ -35,16 +37,11 @@ If you use an IDE like PhpStorm you can set up a file watcher to do this automat
 
 [More information](http://sass-lang.com/install)
 
-### TypeScript
+### Webpack + TypeScript
 
 ```bash
-npm install -g typescript
-cd wp-avorg-pluing
-tsc
+docker-compose run webpack npm run build
 ```
-
-[PhpStorm has TypeScript support built in](https://www.jetbrains.com/help/phpstorm/typescript-support.html) 
-which can be set up to recompile automatically.
 
 ## Commands
 

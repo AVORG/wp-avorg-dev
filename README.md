@@ -24,6 +24,16 @@ http://localhost:8000              | Home
 http://localhost:8000/wp-login.php | Admin Login
 http://localhost:8001              | Webgrind
 
+## Local Database
+
+Key      | Value
+---------|--------------
+Host     | localhost
+Port     | 3308
+User     | wordpress
+Password | wordpress
+Database | wordpress
+
 ## Transpiling
 
 ### Sass

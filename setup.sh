@@ -24,8 +24,11 @@ docker-compose run --rm \
 	--admin_email=admin@example.com
 
 ./wp.sh plugin activate wp-avorg-plugin pwa
-./wp.sh plugin install query-monitor --activate
+# The following plugin is deactivated because it seems to sets display_errors to 0
+#./wp.sh plugin install query-monitor --activate
 ./wp.sh config set WP_DEBUG true --raw
+./wp.sh config set WP_DEBUG_LOG true --raw
+./wp.sh config set WP_DEBUG_DISPLAY true --raw
 ./wp.sh config set SCRIPT_DEBUG true --raw
 ./wp.sh config set FS_METHOD direct
 ./wp.sh rewrite structure '/%postname%/'
